@@ -9,20 +9,8 @@
 #import "ExchangeApiKeyNetwork.h"
 #import "Constants.h"
 #import <CommonCrypto/CommonHMAC.h>
-#import "Utility.h"
 
 @implementation ExchangeApiKeyNetwork
-
-+ (instancetype)sharedInstance {
-    
-    static ExchangeApiKeyNetwork *service;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        service = [[ExchangeApiKeyNetwork alloc] init];
-    });
-    return service;
-}
 
 - (void)getBalancesWithType:(ExchangeApiKeyType )exchangeType
                      apiKey:(NSString *)apiKey
